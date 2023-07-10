@@ -1,14 +1,13 @@
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
 public class Homework18 extends BaseTest{
 
-    @Test (dataProvider = "CorrectLoginProviders", dataProviderClass = BaseTest.class)
-    public void playSongTest(String email, String password) throws InterruptedException{
+    @Test
+    public void playSongTest throws InterruptedException{
         //Put the email field inside the web page
-        enterEmail(email);
+        enterEmail("dulcealergica@yahoo.com");
         // Put the password inside the web app
-        enterPassword(password);
+        enterPassword("te$t$tudent");
         //Click on the submit button
         clickSubmit();
 

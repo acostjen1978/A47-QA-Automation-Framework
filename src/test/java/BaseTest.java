@@ -7,6 +7,7 @@ import org.testng.annotations.*;
 import org.openqa.selenium.WebDriver;
 
 import java.time.Duration;
+import java.util.UUID;
 
 public class BaseTest {
 
@@ -14,8 +15,7 @@ public class BaseTest {
         public static String url = "https://qa.koel.app/";
 
         @BeforeSuite
-        static void setupClass() {
-            WebDriverManager.chromedriver().setup();
+        static void setupClass() {WebDriverManager.chromedriver().setup();
         }
 
         @BeforeMethod
