@@ -26,7 +26,7 @@ public class BaseTest {
         WebDriverManager.chromedriver().setup();
     }
     @BeforeMethod
-    @Parameters({ "BaseURL" })
+    @Parameters ("BaseURL")
     public void launchBrowser(String BaseURL) {
         // Added ChromeOptions argument below to fix websocket error
         ChromeOptions options = new ChromeOptions();

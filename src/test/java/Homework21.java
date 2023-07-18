@@ -2,6 +2,9 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 public class Homework21 extends BaseTest {
 
+    private String email;
+    private String password;
+
     @Test (dataProvider = "CorrectLoginProviders", dataProviderClass = BaseTest.class)
     public void playSongTest(String email, String password) throws InterruptedException {
 
