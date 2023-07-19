@@ -1,11 +1,27 @@
-import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.testng.annotations.BeforeSuite;
+package pages;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class BaseTest {
+    public static WebDriver driver = null;
+    public static  WebDriverWait wait = null;
+    public static  Actions actions = null;
+    public static String url = null;
 
-    @BeforeSuite
-    static void setupClass() {
-        WebDriverManager.chromedriver().setup();
+    public BaseTest (WebDriver givenDriver) {
+        driver = givenDriver;
+        wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        actions = new Actions(driver);
+    }
+
+    public WebElement findElement(By locator) {
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
 }

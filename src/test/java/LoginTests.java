@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 
 import static Pages.BasePage.driver;
 
-public class LoginTests extends BaseTest {
+ {
     @Test
     public void LoginValidEmailPasswordTest() {
 
